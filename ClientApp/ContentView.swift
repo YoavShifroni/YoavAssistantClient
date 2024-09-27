@@ -10,7 +10,6 @@ import Foundation
 
 struct CalenderView: View {
     private let color  = Color.red
-    private let months : [MonthData] = [MonthData(numberOfDays: 32, month: "January", numberOfBlanks: 1, monthNumber: 1), MonthData(numberOfDays: 30, month: "February", numberOfBlanks: 4, monthNumber: 2), MonthData(numberOfDays: 32, month: "March", numberOfBlanks: 5, monthNumber: 3), MonthData(numberOfDays: 31, month: "April", numberOfBlanks: 1, monthNumber: 4), MonthData(numberOfDays: 32, month: "May", numberOfBlanks: 3, monthNumber: 5), MonthData(numberOfDays: 31, month: "June", numberOfBlanks: 6, monthNumber: 6), MonthData(numberOfDays: 32, month: "July", numberOfBlanks: 1, monthNumber: 7), MonthData(numberOfDays: 32, month: "August", numberOfBlanks: 4, monthNumber: 8), MonthData(numberOfDays: 31, month: "September", numberOfBlanks: 0, monthNumber: 9), MonthData(numberOfDays: 32, month: "October", numberOfBlanks: 2, monthNumber: 10), MonthData(numberOfDays: 31, month: "November", numberOfBlanks: 5, monthNumber: 11), MonthData(numberOfDays: 32, month: "December", numberOfBlanks: 0, monthNumber: 12)]
     
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 50))
@@ -29,7 +28,8 @@ struct CalenderView: View {
     
     private let days: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     
-    
+    @EnvironmentObject private var model: CalendarViewModel
+
     var body: some View {
         NavigationView{
             VStack {
@@ -49,7 +49,7 @@ struct CalenderView: View {
                     }
                 }
                 ScrollView  {
-                    ForEach(months, id: \.self){ month in
+                    ForEach(model.monthsData, id: \.self){ month in
                         Spacer(minLength: 30)
                         Text(month.month)
                             .foregroundColor(.black)
@@ -78,8 +78,10 @@ struct CalenderView: View {
                             }
                         
                     }
+                }.padding()
+                .task {
+                    await model.fetchData()
                 }
-                .padding()
             }
         }
     }
@@ -124,25 +126,10 @@ struct OpenDayView : View{
     var body : some View{
         NavigationView{
             VStack{
-//                .navigationBarTitle(Text("Hi"), displayMode: .inline)
-//Text(createDate(year: year, month: month, day: day).formatted(date: .complete, time: .omitted))
-////                    .bold()
-////                    .font(.system(size: 24, weight: .medium, design: .rounded))
-//                ScrollView{
-//                        ForEach(data, id: \.self) { meeting in
-//                            Spacer(minLength: 30)
-//                            HStack{
-//                                Text("\(meeting.beginHour):\(meeting.beginMinute)")
-//                                Text(" - \(meeting.endHour):\(meeting.endMinute)")
-//                                Spacer()
-//                                Text("\(meeting.data) ")
-//                                    .multilineTextAlignment(.trailing)
-//
-//                            }
-//                        }
-//                        
-//                    
-//                }
+                Spacer()
+                Text("Things you have in this day:")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 24, weight: .medium, design: .rounded))
                 List(data) { meeting in
                     NavigationLink(destination: EmptyView()){
                         HStack{
@@ -181,6 +168,16 @@ struct OpenDayView : View{
         let date = calendar.date(from: dateComonents)!
         return date
 
+    }
+}
+
+struct AddEventView : View {
+    var body: some View {
+        NavigationView{
+            VStack{
+                
+            }
+        }
     }
 }
 #Preview {

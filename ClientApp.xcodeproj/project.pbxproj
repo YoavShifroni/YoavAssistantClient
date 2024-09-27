@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1176BC82CA6868B000EA8FA /* CalenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1176BC72CA6868B000EA8FA /* CalenderViewModel.swift */; };
+		D1176BCA2CA687A4000EA8FA /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1176BC92CA687A3000EA8FA /* WebService.swift */; };
+		D1176BCC2CA6C225000EA8FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1176BCB2CA6C225000EA8FA /* Constants.swift */; };
 		D176588B2C66455E0076B1E0 /* MeetingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D176588A2C66455E0076B1E0 /* MeetingData.swift */; };
 		D1B003442C25CE7F0020A5F0 /* ClientAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B003432C25CE7F0020A5F0 /* ClientAppApp.swift */; };
 		D1B003462C25CE7F0020A5F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B003452C25CE7F0020A5F0 /* ContentView.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D1176BC72CA6868B000EA8FA /* CalenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewModel.swift; sourceTree = "<group>"; };
+		D1176BC92CA687A3000EA8FA /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		D1176BCB2CA6C225000EA8FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D176588A2C66455E0076B1E0 /* MeetingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingData.swift; sourceTree = "<group>"; };
 		D1B003402C25CE7F0020A5F0 /* ClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B003432C25CE7F0020A5F0 /* ClientAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAppApp.swift; sourceTree = "<group>"; };
@@ -98,12 +104,15 @@
 		D1B003422C25CE7F0020A5F0 /* ClientApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1176BC92CA687A3000EA8FA /* WebService.swift */,
 				D1B003432C25CE7F0020A5F0 /* ClientAppApp.swift */,
 				D1B003452C25CE7F0020A5F0 /* ContentView.swift */,
 				D1B003472C25CE800020A5F0 /* Assets.xcassets */,
 				D1B003492C25CE800020A5F0 /* Preview Content */,
 				D1B0036D2C25E98E0020A5F0 /* MonthData.swift */,
 				D176588A2C66455E0076B1E0 /* MeetingData.swift */,
+				D1176BC72CA6868B000EA8FA /* CalenderViewModel.swift */,
+				D1176BCB2CA6C225000EA8FA /* Constants.swift */,
 			);
 			path = ClientApp;
 			sourceTree = "<group>";
@@ -263,9 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1176BCA2CA687A4000EA8FA /* WebService.swift in Sources */,
 				D1B0036E2C25E98E0020A5F0 /* MonthData.swift in Sources */,
 				D1B003462C25CE7F0020A5F0 /* ContentView.swift in Sources */,
 				D1B003442C25CE7F0020A5F0 /* ClientAppApp.swift in Sources */,
+				D1176BCC2CA6C225000EA8FA /* Constants.swift in Sources */,
+				D1176BC82CA6868B000EA8FA /* CalenderViewModel.swift in Sources */,
 				D176588B2C66455E0076B1E0 /* MeetingData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

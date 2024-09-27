@@ -8,11 +8,10 @@
 import Foundation
 
 
-struct MonthData : Hashable {
-     var numberOfDays : Int
-     var month : String
-     var numberOfBlanks : Int
-    var monthNumber : Int
-    
+struct MonthData : Hashable, Codable {
+    let numberOfDays : Int
+    let month : String
+    let numberOfBlanks : Int
+    let monthNumber : Int
     
 }
