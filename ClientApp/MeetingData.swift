@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct MeetingData : Identifiable{
-    let id = UUID()
+struct MeetingData : Identifiable, Hashable, Codable{
+    let id : Int
     let beginHour : Int
     let beginMinute : Int
     let endHour : Int

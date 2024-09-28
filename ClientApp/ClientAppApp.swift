@@ -12,7 +12,6 @@ struct ClientAppApp: App {
     var body: some Scene {
         WindowGroup {
             CalenderView()
-                .environmentObject(CalendarViewModel())
         }
     }
 }

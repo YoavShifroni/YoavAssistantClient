@@ -15,7 +15,7 @@ struct CalenderView: View {
         GridItem(.adaptive(minimum: 50))
     ]
     
-    private let numberColumns = [
+    private let dayColumns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -23,12 +23,17 @@ struct CalenderView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible()),
+        // 7 עמודות גמישות
     ]
     
     
     private let days: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     
-    @EnvironmentObject private var model: CalendarViewModel
+    @ObservedObject private var model: CalendarViewModel
+    
+    init() {
+        self.model = CalendarViewModel()
+    }
 
     var body: some View {
         NavigationView{
@@ -36,7 +41,7 @@ struct CalenderView: View {
                 Text("2024")
                     .foregroundColor(.indigo)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
-                LazyVGrid(columns: numberColumns, spacing: 20){
+                LazyVGrid(columns: dayColumns, spacing: 20){
                     ForEach(days, id: \.self){ day in
                         ZStack{
                             Rectangle()
@@ -54,7 +59,7 @@ struct CalenderView: View {
                         Text(month.month)
                             .foregroundColor(.black)
                             .font(.system(size: 30,weight: .medium, design: .rounded))
-                            LazyVGrid(columns: numberColumns, spacing: 20){
+                            LazyVGrid(columns: dayColumns, spacing: 20){
                                 ForEach(0..<month.numberOfBlanks) { rr in
                                     ZStack{
                                         Rectangle()
@@ -112,13 +117,15 @@ struct CalenderView: View {
 struct OpenDayView : View{
     let day : Int
     let month : Int
-    let year : Int 
-    private let data : [MeetingData] = [MeetingData(beginHour: 15,beginMinute: 10,endHour: 16, endMinute: 15,data: "היי מה קורה אחשלי"), MeetingData(beginHour: 18,beginMinute: 35,endHour: 20,endMinute: 12,data: "הילד קפץ מעל הבריכה ונחת בתוך גוש גדול של עלים")]
+    let year : Int
+    
+    @ObservedObject private var data : MeetingDataModel
     
     init(day: Int, month: Int, year: Int) {
         self.day = day
         self.month = month
         self.year = year
+        data = MeetingDataModel()
         UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
     }
     
@@ -130,7 +137,7 @@ struct OpenDayView : View{
                 Text("Things you have in this day:")
                     .foregroundColor(.gray)
                     .font(.system(size: 24, weight: .medium, design: .rounded))
-                List(data) { meeting in
+                List(data.mettingData) { meeting in
                     NavigationLink(destination: EmptyView()){
                         HStack{
                             Text("\(meeting.beginHour):\(meeting.beginMinute)")
@@ -155,6 +162,8 @@ struct OpenDayView : View{
                         }
                     }
                 }
+            }.task {
+                await data.fetchData(day : self.day, month: self.month, year: self.year)
             }
         }
     }

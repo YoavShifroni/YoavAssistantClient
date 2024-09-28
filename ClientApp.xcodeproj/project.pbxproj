@@ -10,6 +10,7 @@
 		D1176BC82CA6868B000EA8FA /* CalenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1176BC72CA6868B000EA8FA /* CalenderViewModel.swift */; };
 		D1176BCA2CA687A4000EA8FA /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1176BC92CA687A3000EA8FA /* WebService.swift */; };
 		D1176BCC2CA6C225000EA8FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1176BCB2CA6C225000EA8FA /* Constants.swift */; };
+		D17153E82CD66F9E004C1F82 /* MeetingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17153E72CD66F96004C1F82 /* MeetingDataModel.swift */; };
 		D176588B2C66455E0076B1E0 /* MeetingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D176588A2C66455E0076B1E0 /* MeetingData.swift */; };
 		D1B003442C25CE7F0020A5F0 /* ClientAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B003432C25CE7F0020A5F0 /* ClientAppApp.swift */; };
 		D1B003462C25CE7F0020A5F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B003452C25CE7F0020A5F0 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 		D1176BC72CA6868B000EA8FA /* CalenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewModel.swift; sourceTree = "<group>"; };
 		D1176BC92CA687A3000EA8FA /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		D1176BCB2CA6C225000EA8FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D17153E72CD66F96004C1F82 /* MeetingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingDataModel.swift; sourceTree = "<group>"; };
 		D176588A2C66455E0076B1E0 /* MeetingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingData.swift; sourceTree = "<group>"; };
 		D1B003402C25CE7F0020A5F0 /* ClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B003432C25CE7F0020A5F0 /* ClientAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAppApp.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		D1B003422C25CE7F0020A5F0 /* ClientApp */ = {
 			isa = PBXGroup;
 			children = (
+				D17153E72CD66F96004C1F82 /* MeetingDataModel.swift */,
 				D1176BC92CA687A3000EA8FA /* WebService.swift */,
 				D1B003432C25CE7F0020A5F0 /* ClientAppApp.swift */,
 				D1B003452C25CE7F0020A5F0 /* ContentView.swift */,
@@ -206,7 +209,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					D1B0033F2C25CE7F0020A5F0 = {
 						CreatedOnToolsVersion = 15.0;
@@ -277,6 +280,7 @@
 				D1B003462C25CE7F0020A5F0 /* ContentView.swift in Sources */,
 				D1B003442C25CE7F0020A5F0 /* ClientAppApp.swift in Sources */,
 				D1176BCC2CA6C225000EA8FA /* Constants.swift in Sources */,
+				D17153E82CD66F9E004C1F82 /* MeetingDataModel.swift in Sources */,
 				D1176BC82CA6868B000EA8FA /* CalenderViewModel.swift in Sources */,
 				D176588B2C66455E0076B1E0 /* MeetingData.swift in Sources */,
 			);
@@ -445,6 +449,7 @@
 				DEVELOPMENT_TEAM = 7TRT9VUFUT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClientApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -474,6 +479,7 @@
 				DEVELOPMENT_TEAM = 7TRT9VUFUT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClientApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -495,7 +501,6 @@
 		D1B003682C25CE800020A5F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -515,7 +520,6 @@
 		D1B003692C25CE800020A5F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -535,7 +539,6 @@
 		D1B0036B2C25CE800020A5F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7TRT9VUFUT;
@@ -553,7 +556,6 @@
 		D1B0036C2C25CE800020A5F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7TRT9VUFUT;
